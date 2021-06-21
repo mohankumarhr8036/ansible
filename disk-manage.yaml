@@ -1,0 +1,16 @@
+---
+- hosts: all
+  user: azureuser
+  become: yes
+  become_method: sudo
+  become_user: root
+  tasks:
+          - name: cpoy script disk.sh
+            copy: src=disk.sh dest=/home/azureuser mode=0777
+
+          - name: Run script for audit
+            command: sh /home/azureuser/disk.sh
+            register: results
+
+          - name: show results
+            debug: msg={{ results.stdout.split('\n') }}
