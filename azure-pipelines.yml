@@ -4,7 +4,8 @@
 
 trigger: none
 
-pool: default
+pool:
+  vmImage: ubuntu-latest
 
 steps:
 - task: AzureCLI@2
