@@ -10,7 +10,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Azure CLI'
   inputs:
-    azureSubscription: '$(SUBSCRIPTION_NAME)'
+    azureSubscription: 'Azure subscription 1'
     addSpnToEnvironment: true
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
