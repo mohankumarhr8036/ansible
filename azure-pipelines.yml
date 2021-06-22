@@ -20,7 +20,7 @@ steps:
       echo "##vso[task.setvariable variable=ARM_CLIENT_SECRET]${servicePrincipalKey}"
       echo "##vso[task.setvariable variable=ARM_TENANT_ID]${tenantId}"
 
-- script: ansible-playbook disk-manage.yml
+- script: ansible-playbook -i inventory disk-manage.yml
   displayName: 'Run Ansible Playbook'
   env:
     AZURE_CLIENT_ID: $(ARM_CLIENT_ID)
